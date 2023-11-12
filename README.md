@@ -1,4 +1,4 @@
-# ls-config
+# lf-config
 
 ## Summary
 
