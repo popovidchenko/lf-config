@@ -2,7 +2,7 @@
 
 ## Summary
 
-This is the repository containing the lf configuration.
+This is the repository containing the lf configuration file.
 
 lf (as in "list files") is a terminal file manager written in Go with a heavy inspiration from ranger file manager [[repository](https://github.com/gokcehan/lf), [documentation](https://pkg.go.dev/github.com/gokcehan/lf)].
 
@@ -37,11 +37,6 @@ Usage environment: macOS 13.6.1 Ventura and zsh via [warp](https://www.warp.dev/
 | paste | p |
 | clear | l |
 | redraw | R |
-| read | : |
-| shell | $ |
-| shell-pipe | % |
-| shell-wait | ! |
-| shell-async | & |
 | mark-save | ms |
 | mark-load | ml |
 | mark-remove | mr |
