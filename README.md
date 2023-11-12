@@ -13,21 +13,21 @@ Usage environment: macOS 13.6.1 Ventura and zsh via [warp](https://www.warp.dev/
 
 | Command | Keybinding |
 |---------| :------------: |
-| shell | $ or \<enter\> |
+| shell | $ or enter |
 | shell-pipe | % |
 | shell-wait | !  |
 | shell-async | &  |
 | quit | q |
-| up | \<up\> |
-| down | \<down\> |
+| up | ↑ |
+| down | ↓ |
 | page-up | u |
 | page-down | d |
 | top | U |
 | bottom | D |
-| updir | \<left\> |
-| open | \<right\> |
-| delete-to-bin | backspace |
-| toggle | \<space\> |
+| updir | ← |
+| open | → |
+| delete-to-bin | del |
+| toggle | space |
 | glob-select | ts |
 | glob-unselect | tu |
 | invert | ti |
