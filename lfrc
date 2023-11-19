@@ -25,7 +25,6 @@ clearmaps
 
 # Read a shell command to execute.
 map '$' shell
-map <enter> shell
 
 # Read a shell command to execute piping its standard I/O to the bottom
 #   statline.
@@ -38,7 +37,10 @@ map '!' shell-wait
 map '&' shell-async
 
 # Synchronize the terminal and redraw the screen.
-map R redraw
+map rd redraw
+
+# Flush the cache and reload all files and directories.
+map rl reload
 
 # Quit lf and return to the shell.
 map q quit
@@ -52,7 +54,10 @@ map U top
 map D bottom
 
 map <left> updir
+map <backspace2> updir
+
 map <right> open
+map <enter> open
 
 # Selection command.
 map <space> toggle
@@ -85,24 +90,34 @@ map X !$f
 
 # Make directory.
 map <c-d> :push %mkdir<space>
+map <f-7> :push %mkdir<space>
 
 # Create file.
 map <c-f> :push %touch<space>
+map <f-5> :push %touch<space>
 
 # Rename file.
 map <c-r> rename
-
-# Open file.
-map <c-o> &open $f
+map <f-6> rename
 
 # Make sure trash folder exists and move current file or selected files to trash
 #   folder.
 %mkdir -p ~/.trash
 cmd trash ${{
     set -f
-    mv $(echo "$fx") ~/.trash
+    for file in $fx; do
+        base=$(basename "$file")
+        dest="$HOME/.trash/$base"
+        if [[ -e "$dest" ]]; then
+            new_dest="${dest}_$(date +'%Y%m%d_%H%M%S')"
+            mv "$file" "$new_dest"
+        else
+            mv "$file" "$dest"
+        fi
+    done
 }}
 map <delete> trash
+map <f-8> trash
 
 # Compress current file or selected files with tar and gunzip.
 cmd create-tar-archive ${{
@@ -150,6 +165,12 @@ cmd copy-full-file-name-to-clipboard ${{
 }}
 map <a-f> copy-full-file-name-to-clipboard
 
+# Open the current file in finder.
+cmd open-in-finder ${{
+    open -a Finder "$PWD"
+}}
+map <a-o> open-in-finder
+
 # Show hidden files and directories
 map zh set hidden!
 
@@ -173,6 +194,7 @@ map se :set sortby ext; set info
 
 # Go to the home directory
 map gh cd ~
+map gl cd ~/Library
 map gd cd ~/Downloads
 map gp cd ~/projects
 map gr cd /
