@@ -11,7 +11,7 @@ Usage environment: macOS 13.6.1 Ventura and zsh via [warp](https://www.warp.dev/
 
 | Command | Keybinding |
 |---------| :------------: |
-| shell | $ |
+| shell | $ or enter |
 | shell-pipe | % |
 | shell-wait | !  |
 | shell-async | &  |
@@ -22,9 +22,9 @@ Usage environment: macOS 13.6.1 Ventura and zsh via [warp](https://www.warp.dev/
 | page-down | d |
 | top | U |
 | bottom | D |
-| updir | ← or backspace |
-| open | → or enter |
-| delete-to-bin | delete of f8 |
+| updir | ← |
+| open | → |
+| delete | delete |
 | toggle | space |
 | glob-select | ts |
 | glob-unselect | tu |
@@ -42,9 +42,9 @@ Usage environment: macOS 13.6.1 Ventura and zsh via [warp](https://www.warp.dev/
 | show-results | ` |
 | execute-file | x |
 | execute-file | X |
-| make-directory | ctrl-d or f7|
-| create-file | ctrl-f or f5 |
-| rename-file | ctrl-r or f6 |
+| make-directory | ctrl-d|
+| create-file | ctrl-f |
+| rename-file | ctrl-r |
 | create-tar-archive | at |
 | create-zip-archive | az |
 | extract-archive | ae |
